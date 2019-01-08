@@ -15,10 +15,14 @@ class Movie(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	title = db.Column(db.String(120))
 	rating = db.Column(db.Integer)
+	likes = db.Column(db.Integer)
+	dislikes = db.Column(db.Integer)
 
-	def __init__(self, title, rating):
+	def __init__(self, title, rating, likes, dislikes):
 		self.title = title
 		self.rating = rating
+		self.likes = likes
+		self.dislikes = dislikes
 
 	def __repr__(self):
 		return '<Title %r>' % self.title
